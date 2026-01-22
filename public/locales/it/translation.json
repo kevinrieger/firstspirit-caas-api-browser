@@ -1,0 +1,172 @@
+{
+	"setup": {
+		"goBack": "Indietro",
+		"uploadConfigFile": {
+			"title": "Carica file di configurazione",
+			"description": "Carica un file JSON per iniziare"
+		},
+		"wizardSetup": {
+			"title": "Configurazione guidata",
+			"description": "Procedura guidata passo dopo passo",
+			"step1": {
+				"form": {
+					"projectName": {
+						"label": "Nome progetto",
+						"placeholder": "Nome progetto",
+						"validation": {
+							"required": "Questo campo è obbligatorio"
+						}
+					},
+					"caasApiKey": {
+						"label": "Chiave API CaaS",
+						"placeholder": "Chiave API CaaS",
+						"validation": {
+							"required": "Questo campo è obbligatorio"
+						}
+					},
+					"caasUrl": {
+						"label": "URL CaaS",
+						"placeholder": "URL CaaS",
+						"validation": {
+							"required": "Questo campo è obbligatorio"
+						}
+					},
+					"submitBtn": "Salva",
+					"nextStep": "Avanti",
+					"connectionStatus": {
+						"label": "Stato connessione",
+						"connected": "Connesso",
+						"disconnected": "Non connesso",
+						"testing": "Verifica connessione in corso",
+						"untouched": "In attesa del modulo",
+						"connectionStatusText": "Stato connessione: {{status}}",
+						"toast": {
+							"status200": "Connessione riuscita",
+							"status401": "Errore 401 | Probabilmente chiave API errata",
+							"status403": "Errore 403 | Probabilmente modalità contenuto errata",
+							"status404": "Errore 404 | Probabilmente ID progetto errato",
+							"statusError": "Errore | Probabilmente URL errato"
+						}
+					}
+				}
+			},
+			"step2": {
+				"form": {
+					"title": "Schemi e tipi di entità",
+					"submitBtn": "Salva",
+					"nextStep": "Avanti",
+					"configurationMode": {
+						"automaticBtn": "Rileva automaticamente schemi e tipi di entità",
+						"label": "Modalità di configurazione",
+						"tooltip": "La configurazione può essere eseguita automaticamente o manualmente. In modalità automatica verranno inviate richieste al CaaS per recuperare gli entityTypes. A ogni richiesta andata a buon fine tutti i tipi di entità individuati verranno esclusi dalla richiesta successiva finché il CaaS non restituirà più dati.",
+						"options": {
+							"manual": "Manuale",
+							"automatic": "Automatico"
+						},
+						"resolvingSchemas": "Rilevamento degli schemi in corso...",
+						"manual": {
+							"addNewSchema": "Aggiungi nuovo schema",
+							"addSchemaBtn": "Aggiungi schema",
+							"schemaNamePlaceholder": "Nome schema",
+							"addEntityTypeBtn": "Aggiungi"
+						},
+						"toast": {
+							"schemasFound": "Trovati {{schemas}} schemi per un totale di {{entityTypes}} tipi di entità",
+							"schemasSaved": "Schemi salvati",
+							"error": "Errore durante il rilevamento degli schemi: {{error}}"
+						}
+					}
+				}
+			},
+			"step3": {
+				"form": {
+					"title": "Aggiungi locale",
+					"locale": {
+						"placeholder": "Locale (es. it_IT)",
+						"add": "Aggiungi",
+						"invalidFormat": "Formato locale non valido. Formato previsto: xx_YY",
+						"toast": {
+							"localesSaved": "Locali salvati",
+							"alreadyExists": "Locale già esistente"
+						}
+					},
+					"submitBtn": "Salva",
+					"nextStep": "Inizia a esplorare"
+				}
+			}
+		},
+		"fileUpload": {
+			"title": {
+				"text": "Trascina qui il tuo file di configurazione oppure ",
+				"browse": "sfoglia",
+				"selectDifferentFile": "Fai clic per selezionare un altro file"
+			},
+			"dropYourConfigFile": "Rilascia qui il tuo file di configurazione",
+			"submitBtn": "Usa configurazione",
+			"toast": {
+				"configLoadedSuccessfully": "Configurazione caricata con successo"
+			}
+		}
+	},
+	"app": {
+		"form": {
+			"project": "Progetto",
+			"decodedUrl": "URL decodificato",
+			"noUrlToDisplay": "Nessun URL da visualizzare",
+			"copyUrlToClipboardBtn": {
+				"label": "Copia URL negli appunti",
+				"success": "URL copiato negli appunti",
+				"error": "Nessun URL da copiare"
+			},
+			"filterDropdown": {
+				"noFilter": "Nessun filtro",
+				"selectFilterType": "Seleziona un tipo di filtro"
+			},
+			"filterParameterDropdown": {
+				"noFilter": "Seleziona",
+				"selectFilterParameter": "Seleziona un parametro di filtro"
+			},
+			"entityTypeDropdown": {
+				"noSchemaFilter": "Nessun filtro schema",
+				"noEntityTypeFilter": "Nessun filtro tipo di entità"
+			},
+			"error": {
+				"missingUrl": "URL CaaS non configurata",
+				"requestFailed": "Richiesta fallita: {{status}} {{statusText}}",
+				"networkError": "Si è verificato un errore di rete. Controlla la connessione."
+			}
+		},
+		"pagination": {
+			"previous": "Precedente",
+			"next": "Successivo",
+			"pageXOfY": "Pagina {{x}} di {{y}}"
+		},
+		"settings": {
+			"dialog": {
+				"title": "Impostazioni",
+				"subtitle": "Configura le impostazioni dell’applicazione",
+				"locale": {
+					"label": "Locale"
+				},
+				"queryParams": {
+					"label": "Parametri di query",
+					"np": {
+						"label": "np",
+						"tooltip": "Impostando il parametro di query np senza alcun valore, la collection restituita non conterrà metadati della collection."
+					},
+					"repPj": {
+						"label": "rep pj",
+						"tooltip": "Impostando il parametro di query rep su pj verrà creata una risposta JSON semplice senza metadati. Questo rimuove qualsiasi informazione sul numero di elementi o di pagine nella risposta e di conseguenza interrompe la paginazione."
+					},
+					"count": {
+						"label": "count",
+						"tooltip": "Aggiunge alla risposta metadati con informazioni sul numero di elementi e di pagine. Necessario affinché la paginazione funzioni correttamente, ma rallenta la richiesta."
+					}
+				},
+				"switchProject": "Cambia progetto",
+				"downloadConfig": "Scarica configurazione"
+			},
+			"executeRequest": "Esegui"
+		}
+	}
+}

@@ -1,0 +1,172 @@
+{
+	"setup": {
+		"goBack": "Zurück",
+		"uploadConfigFile": {
+			"title": "Konfigurationsdatei hochladen",
+			"description": "Laden Sie eine JSON-Datei hoch, um zu beginnen"
+		},
+		"wizardSetup": {
+			"title": "Assistenten-Einrichtung",
+			"description": "Schritt-für-Schritt in einem geführten Formular",
+			"step1": {
+				"form": {
+					"projectName": {
+						"label": "Projektname",
+						"placeholder": "Projektname",
+						"validation": {
+							"required": "Dieses Feld ist erforderlich"
+						}
+					},
+					"caasApiKey": {
+						"label": "CaaS API Key",
+						"placeholder": "CaaS API Key",
+						"validation": {
+							"required": "Dieses Feld ist erforderlich"
+						}
+					},
+					"caasUrl": {
+						"label": "CaaS URL",
+						"placeholder": "CaaS URL",
+						"validation": {
+							"required": "Dieses Feld ist erforderlich"
+						}
+					},
+					"submitBtn": "Speichern",
+					"nextStep": "Weiter",
+					"connectionStatus": {
+						"label": "Verbindungsstatus",
+						"connected": "Verbunden",
+						"disconnected": "Nicht verbunden",
+						"testing": "Verbindung wird getestet",
+						"untouched": "Warten auf Formular",
+						"connectionStatusText": "Verbindungsstatus: {{status}}",
+						"toast": {
+							"status200": "Verbindung erfolgreich",
+							"status401": "Error 401 | Möglicherweise falsche API Key",
+							"status403": "Fehler 403 | Möglicherweise falsche Inhaltsmodus",
+							"status404": "Fehler 404| Möglicherweise falsche Projekt-ID",
+							"statusError": "Fehler | Möglicherweise falsche URL"
+						}
+					}
+				}
+			},
+			"step2": {
+				"form": {
+					"title": "Schemas & Entity Types",
+					"submitBtn": "Speichern",
+					"nextStep": "Weiter",
+					"configurationMode": {
+						"automaticBtn": "Schemas & Entity Types automatisch erkennen",
+						"label": "Konfigurationsmodus",
+						"tooltip": "Die Konfiguration kann automatisch oder manuell erfolgen. Im automatischen Modus werden Anfragen an den CaaS gesendet und EntityTypes abgerufen. Mit jeder erfolgreichen Anfrage werden alle entdeckten Entity Types von der nächsten Anfrage ausgeschlossen, bis keine Daten mehr von der CaaS zurückgegeben werden.",
+						"options": {
+							"manual": "Manuell",
+							"automatic": "Automatisch"
+						},
+						"resolvingSchemas": "Schemas werden erkannt...",
+						"manual": {
+							"addNewSchema": "Neues Schema hinzufügen",
+							"addSchemaBtn": "Schema hinzufügen",
+							"schemaNamePlaceholder": "Schema Name",
+							"addEntityTypeBtn": "Hinzufügen"
+						},
+						"toast": {
+							"schemasFound": "{{schemas}} Schemas gefunden mit insgesamt {{entityTypes}} Entity Types",
+							"schemasSaved": "Schemas gespeichert",
+							"error": "Fehler beim Erkennen der Schemas: {{error}}"
+						}
+					}
+				}
+			},
+			"step3": {
+				"form": {
+					"title": "Locale hinzufügen",
+					"locale": {
+						"placeholder": "Locale (z. B. de_DE)",
+						"add": "Hinzufügen",
+						"invalidFormat": "Ungültiges Locale Format. Erwartetes Format: xx_YY",
+						"toast": {
+							"localesSaved": "Locales gespeichert",
+							"alreadyExists": "Locale bereits vorhanden"
+						}
+					},
+					"submitBtn": "Speichern",
+					"nextStep": "Loslegen"
+				}
+			}
+		},
+		"fileUpload": {
+			"title": {
+				"text": "Ziehen Sie Ihre Konfigurationsdatei hierher oder ",
+				"browse": "durchsuchen",
+				"selectDifferentFile": "Klicken Sie, um eine andere Datei auszuwählen"
+			},
+			"dropYourConfigFile": "Legen Sie Ihre Konfigurationsdatei hier ab",
+			"submitBtn": "Konfiguration benutzen",
+			"toast": {
+				"configLoadedSuccessfully": "Konfiguration erfolgreich geladen"
+			}
+		}
+	},
+	"app": {
+		"form": {
+			"project": "Projekt",
+			"decodedUrl": "Dekodierte URL",
+			"noUrlToDisplay": "Keine URL zum Anzeigen",
+			"copyUrlToClipboardBtn": {
+				"label": "URL in die Zwischenablage kopieren",
+				"success": "URL in die Zwischenablage kopiert",
+				"error": "Keine URL zum Kopieren vorhanden"
+			},
+			"filterDropdown": {
+				"noFilter": "Kein Filter",
+				"selectFilterType": "Filtertyp auswählen"
+			},
+			"filterParameterDropdown": {
+				"noFilter": "Auswählen",
+				"selectFilterParameter": "Filterparameter auswählen"
+			},
+			"entityTypeDropdown": {
+				"noSchemaFilter": "Kein Schema Filter",
+				"noEntityTypeFilter": "Kein Entity Type Filter"
+			},
+			"error": {
+				"missingUrl": "CaaS URL ist nicht konfiguriert",
+				"requestFailed": "Anfrage fehlgeschlagen: {{status}} {{statusText}}",
+				"networkError": "Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Verbindung."
+			}
+		},
+		"pagination": {
+			"previous": "Zurück",
+			"next": "Weiter",
+			"pageXOfY": "Seite {{x}} von {{y}}"
+		},
+		"settings": {
+			"dialog": {
+				"title": "Einstellungen",
+				"subtitle": "Einstellungen für die Anwendung konfigurieren",
+				"locale": {
+					"label": "Locale"
+				},
+				"queryParams": {
+					"label": "Query Parameter",
+					"np": {
+						"label": "np",
+						"tooltip": "Wenn der np-Query-Parameter ohne Wert gesetzt wird, enthält die zurückgegebene Collection keine Metadaten zur Collection."
+					},
+					"repPj": {
+						"label": "rep pj",
+						"tooltip": "Wenn der rep-Query-Parameter auf pj gesetzt wird, wird eine reine JSON-Antwort ohne Metadaten erzeugt. Dadurch entfallen Informationen über die Anzahl der Elemente oder Seiten in der Antwort und die Paginierung funktioniert nicht mehr."
+					},
+					"count": {
+						"label": "count",
+						"tooltip": "Fügt der Antwort Metadaten mit Informationen über die Anzahl der Elemente und Seiten hinzu. Wird für eine funktionierende Paginierung benötigt, verlangsamt die Anfrage jedoch."
+					}
+				},
+				"switchProject": "Projekt wechseln",
+				"downloadConfig": "Konfiguration herunterladen"
+			},
+			"executeRequest": "Ausführen"
+		}
+	}
+}

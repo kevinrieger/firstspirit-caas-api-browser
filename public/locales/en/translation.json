@@ -1,0 +1,172 @@
+{
+	"setup": {
+		"goBack": "Go Back",
+		"uploadConfigFile": {
+			"title": "Upload Config File",
+			"description": "Upload a JSON file to get started"
+		},
+		"wizardSetup": {
+			"title": "Wizard Setup",
+			"description": "Step-by-step in a guided form",
+			"step1": {
+				"form": {
+					"projectName": {
+						"label": "Project Name",
+						"placeholder": "Project Name",
+						"validation": {
+							"required": "This field is required"
+						}
+					},
+					"caasApiKey": {
+						"label": "CaaS API Key",
+						"placeholder": "CaaS API Key",
+						"validation": {
+							"required": "This field is required"
+						}
+					},
+					"caasUrl": {
+						"label": "CaaS URL",
+						"placeholder": "CaaS URL",
+						"validation": {
+							"required": "This field is required"
+						}
+					},
+					"submitBtn": "Submit",
+					"nextStep": "Next Step",
+					"connectionStatus": {
+						"label": "Connection Status",
+						"connected": "Connected",
+						"disconnected": "Disconnected",
+						"testing": "Testing connection",
+						"untouched": "Waiting on form",
+						"connectionStatusText": "Connection status: {{status}}",
+						"toast": {
+							"status200": "Connection successful",
+							"status401": "Error 401 | Probably wrong API Key",
+							"status403": "Error 403 | Probably wrong content mode",
+							"status404": "Error 404| Probably wrong project ID",
+							"statusError": "Error | Probably wrong URL"
+						}
+					}
+				}
+			},
+			"step2": {
+				"form": {
+					"title": "Schemas & Entity Types",
+					"submitBtn": "Save",
+					"nextStep": "Next Step",
+					"configurationMode": {
+						"automaticBtn": "Automatically discover schemas and entity types",
+						"label": "Configuration Mode",
+						"tooltip": "Configuration can be done automatically or manually. Automatic mode will send requests to the CaaS and retrieve entityTypes. With every successful request all discovered entity types will be excluede from the next request until no data is returned from the CaaS.",
+						"options": {
+							"manual": "Manual",
+							"automatic": "Automatic"
+						},
+						"resolvingSchemas": "Resolving schemas...",
+						"manual": {
+							"addNewSchema": "Add new schema",
+							"addSchemaBtn": "Add schema",
+							"schemaNamePlaceholder": "Schema name",
+							"addEntityTypeBtn": "Add"
+						},
+						"toast": {
+							"schemasFound": "Found {{schemas}} schemas with a total of {{entityTypes}} entity types",
+							"schemasSaved": "Schemas saved",
+							"error": "Error resolving schemas: {{error}}"
+						}
+					}
+				}
+			},
+			"step3": {
+				"form": {
+					"title": "Add locale",
+					"locale": {
+						"placeholder": "Locale (e.g. en_US)",
+						"add": "Add",
+						"invalidFormat": "Invalid locale format. Expected format: xx_YY",
+						"toast": {
+							"localesSaved": "Locales saved",
+							"alreadyExists": "Locale already exists"
+						}
+					},
+					"submitBtn": "Save",
+					"nextStep": "Start browsing"
+				}
+			}
+		},
+		"fileUpload": {
+			"title": {
+				"text": "Drag & drop your configuration file here or ",
+				"browse": "browse",
+				"selectDifferentFile": "Click to select a different file"
+			},
+			"dropYourConfigFile": "Drop your configuration file here",
+			"submitBtn": "Use Configuration",
+			"toast": {
+				"configLoadedSuccessfully": "Configuration loaded successfully"
+			}
+		}
+	},
+	"app": {
+		"form": {
+			"project": "Project",
+			"decodedUrl": "Decoded URL",
+			"noUrlToDisplay": "No URL to display",
+			"copyUrlToClipboardBtn": {
+				"label": "Copy URL to Clipboard",
+				"success": "URL copied to clipboard",
+				"error": "No URL to copy"
+			},
+			"filterDropdown": {
+				"noFilter": "No Filter",
+				"selectFilterType": "Select a Filter Type"
+			},
+			"filterParameterDropdown": {
+				"noFilter": "Select",
+				"selectFilterParameter": "Select a Filter Parameter"
+			},
+			"entityTypeDropdown": {
+				"noSchemaFilter": "No Schema Filter",
+				"noEntityTypeFilter": "No Entity Type Filter"
+			},
+			"error": {
+				"missingUrl": "CaaS URL is not configured",
+				"requestFailed": "Request failed: {{status}} {{statusText}}",
+				"networkError": "Network error occurred. Please check your connection."
+			}
+		},
+		"pagination": {
+			"previous": "Previous",
+			"next": "Next",
+			"pageXOfY": "Page {{x}} of {{y}}"
+		},
+		"settings": {
+			"dialog": {
+				"title": "Settings",
+				"subtitle": "Configure your settings for the application.",
+				"locale": {
+					"label": "Locale"
+				},
+				"queryParams": {
+					"label": "Query Parameter",
+					"np": {
+						"label": "np",
+						"tooltip": "By setting the np query param without any value, the returned collection will not include any collection metadata"
+					},
+					"repPj": {
+						"label": "rep pj",
+						"tooltip": "Setting the rep query param to pj will create a plain JSON response without any metadata. This removes any information about the number of elements or pages in the response and therefore breaks the pagination."
+					},
+					"count": {
+						"label": "count",
+						"tooltip": "Adds metadata to the response containing information about the number of elements and pages. Needed for pagination to work correctly, but slows down the request."
+					}
+				},
+				"switchProject": "Switch Project",
+				"downloadConfig": "Download Config"
+			},
+			"executeRequest": "Execute"
+		}
+	}
+}
